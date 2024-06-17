@@ -202,13 +202,13 @@ class NuGraph3(LightningModule):
             for key, value in x.items():
                 data.set_value_dict(key, value)
 
-        total_loss = 0.
+        total_loss = 0. 
         total_metrics = {}
-        for decoder in self.decoders:
-            loss, metrics = decoder.loss(data, stage, confusion)
-            total_loss += loss
-            total_metrics.update(metrics)
-            decoder.finalize(data)
+        # for decoder in self.decoders:
+        #     loss, metrics = decoder.loss(data, stage, confusion)
+        #     total_loss += loss
+        #     total_metrics.update(metrics)
+        #     decoder.finalize(data)
 
         return total_loss, total_metrics, data, x
 
