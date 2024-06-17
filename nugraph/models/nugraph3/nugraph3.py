@@ -210,7 +210,7 @@ class NuGraph3(LightningModule):
             total_metrics.update(metrics)
             decoder.finalize(data)
 
-        return total_loss, total_metrics
+        return total_loss, total_metrics, data, x
 
     def on_train_start(self):
         hpmetrics = { 'max_lr': self.hparams.lr }
